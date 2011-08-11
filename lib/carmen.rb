@@ -147,10 +147,7 @@ module Carmen
     return nil if collection.nil?
     collection.each do |m|
       return m[index_to_retrieve] if m[index_to_match].downcase == value.downcase
-    end
-    # In case we didn't get any results we'll try a broader search (via Regexp)
-    collection.each do |m|
-      return m[index_to_retrieve] if m[index_to_match].downcase.match(value.downcase)
+      return m[index_to_retrieve] if m[index_to_retrieve].is_a?(String) && m[index_to_retrieve].downcase == value.downcase
     end
     nil
   end

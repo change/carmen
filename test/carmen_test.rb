@@ -155,4 +155,9 @@ class TestCarmen < Test::Unit::TestCase
       Carmen.countries(:locale => :latin)
     end
   end
+
+  def test_special_characters_dont_rails_an_exception
+    assert_equal(nil, Carmen::state_code('alabama\\'))
+    assert_nil(Carmen::country_code('???'))
+  end
 end

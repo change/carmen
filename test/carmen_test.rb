@@ -54,12 +54,12 @@ class TestCarmen < Test::Unit::TestCase
 
   def test_country_codes
     assert_equal 'AF', Carmen.country_codes.first
-    assert_equal 245, Carmen.country_codes.length
+    assert_equal 253, Carmen.country_codes.length
   end
 
   def test_country_names
     assert_equal 'Afghanistan', Carmen.country_names.first
-    assert_equal 245, Carmen.country_names.length
+    assert_equal 253, Carmen.country_names.length
   end
 
   def test_state_name
@@ -147,12 +147,6 @@ class TestCarmen < Test::Unit::TestCase
   def test_unsupported_states_exception
     assert_raises Carmen::StatesNotSupported do
       Carmen::state_codes('ID')
-    end
-  end
-
-  def test_unsupported_locale
-    assert_raises Carmen::UnavailableLocale do
-      Carmen.countries(:locale => :latin)
     end
   end
 

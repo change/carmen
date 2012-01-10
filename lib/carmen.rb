@@ -14,6 +14,8 @@ if defined?(Rails)
   end
 end
 
+require 'carmen/version'
+
 module Carmen
   class << self
     attr_accessor :default_country, :default_locale, :excluded_countries, :excluded_states,
@@ -52,7 +54,8 @@ module Carmen
       # Check if data in the specified locale is available
       localized_data = File.join(@data_path, "countries", "#{locale}.yml")
       unless File.exists?(localized_data)
-        raise(UnavailableLocale, "Could not load countries for '#{locale}' locale")
+        localized_data = File.join(@data_path, "countries", "#{@default_locale}.yml")
+        # raise(UnavailableLocale, "Could not load countries for '#{locale}' locale")
       end
 
       # As the data exists, load it
@@ -144,7 +147,8 @@ module Carmen
   protected
 
   def self.search_collection(collection, value, index_to_match, index_to_retrieve)
-    return nil if collection.nil? || value.blank?
+    value = value.to_s
+    return nil if collection.nil? || value =~ /^\s*$/
     collection.each do |m|
       return m[index_to_retrieve] if m[index_to_match].downcase == value.downcase
       return m[index_to_retrieve] if m[index_to_retrieve].is_a?(String) && m[index_to_retrieve].downcase == value.downcase

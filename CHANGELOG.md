@@ -1,4 +1,17 @@
-### master
+### 0.2.12
+* Republish the gem with Ruby 1.8.7.
+### 0.2.11
+* Remove Jeweler and release new version.
+### 0.2.10
+* Generate the gem with Ruby 1.8.7 to try to fix YAML library
+  incompatibilities.
+### 0.2.9
+* Preserve order of priority_countries in country_select (castiglione)
+* Add Finnish localization (marjakapyaho)
+* Update a few contru names to match ISO naming (belt)
+* Fall back to default locale if selected locale is missing (twinge)
+* Added Russian country translations (grlm)
+* Added South Sudan as a country (edshadi)
 * Renamed Libyan Arab Jamahiriya to Libya (mdimas)
 * Fixed an issue where trying find a country for a blank string would
   match everything (smathieu)

@@ -131,8 +131,6 @@
   - SI
 - - España
   - ES
-- - Gran Bretaña
-  - GB
 - - Estados Unidos
   - US
 - - Estonia
@@ -157,6 +155,8 @@
   - GH
 - - Gibraltar
   - GI
+- - Gran Bretaña (Reino Unido)
+  - GB
 - - Granada
   - GD
 - - Grecia
@@ -287,8 +287,6 @@
   - CX
 - - Nepal
   - NP
-- - Países Bajos
-  - NL
 - - Nicaragua
   - NI
 - - Níger
@@ -305,6 +303,8 @@
   - NC
 - - Nueva Zelanda
   - NZ
+- - Países Bajos (Nederland)
+  - NL
 - - Pakistán
   - PK
 - - Palaos

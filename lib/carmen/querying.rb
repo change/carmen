@@ -41,5 +41,28 @@ module Carmen
       end
     end
 
+    # Find a region by code or name.
+    #
+    # query - The String name to search for.
+    # options - The Hash options used to modify the name search (default:{}):
+    #           :fuzzy - Whether to use fuzzy matching when finding a
+    #           matching name (optional, default: false)
+    #
+    # Returns a region with the supplied name, or nil if none if found.
+    def coded_or_named(query, options={})
+      coded(query) || named(query, options)
+    end
+
+    # Find a region by name or code.
+    #
+    # query - The String name to search for.
+    # options - The Hash options used to modify the name search (default:{}):
+    #           :fuzzy - Whether to use fuzzy matching when finding a
+    #           matching name (optional, default: false)
+    #
+    # Returns a region with the supplied name, or nil if none if found.
+    def named_or_coded(query, options={})
+      named(query, options) || coded(query)
+    end
   end
 end

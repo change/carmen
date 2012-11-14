@@ -26,6 +26,14 @@ module Carmen
       Carmen.i18n_backend.translate(path('official_name'))
     end
 
+    def most_common_name
+      common_name || name
+    end
+
+    def most_official_name
+      official_name || name
+    end
+
     def self.all
       World.instance.subregions
     end

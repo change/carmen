@@ -5,3 +5,5 @@ tmp
 .DS_Store
 .bundle/*
 Gemfile.lock
+
+*.pem
